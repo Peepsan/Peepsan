@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Game Showcase</h1>
+    </header>
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>This is the first section.</p>
+    </section>
+    <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the second section.</p>
+    </section>
+    <section id="section3">
+        <h2>Section 3</h2>
+        <p>This is the third section.</p>
+    </section>
+    <section id="section4">
+        <h2>Section 4</h2>
+        <p>This is the fourth section.</p>
+    </section>
+
+    <div>
+        <input type="text" id="redText" class="red" placeholder="Red Text">
+        <input type="text" id="blueText" class="blue" placeholder="Blue Text">
+        <input type="text" id="greenText" class="green" placeholder="Green Text">
+    </div>
+
+    <script>
+        // Customize sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.addEventListener('click', () => {
+                section.classList.toggle('red');
+                section.classList.toggle('blue');
+                section.classList.toggle('green');
+            });
+        });
+
+        // Customize text boxes
+        const redTextBox = document.getElementById('redText');
+        const blueTextBox = document.getElementById('blueText');
+        const greenTextBox = document.getElementById('greenText');
+
+        redTextBox.addEventListener('input', () => {
+            sections.forEach(section => {
+                section.querySelector('.red').innerText = redTextBox.value;
+            });
+        });
+
+        blueTextBox.addEventListener('input', () => {
+            sections.forEach(section => {
+                section.querySelector('.blue').innerText = blueTextBox.value;
+            });
+        });
+
+        greenTextBox.addEventListener('input', () => {
+            sections.forEach(section => {
+                section.querySelector('.green').innerText = greenTextBox.value;
+            });
+        });
+    </script>
+</body>
+</html>
